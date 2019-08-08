@@ -1,0 +1,246 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Roboto", sans-serif;
+	background-color: #D1C4E9;
+	color: rgba(255,255,255,0.87);
+}
+
+nav {
+	background-color: #5E35B1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	padding: 20px;
+	box-sizing: border-box;
+	box-shadow: 0px 3px 5px rgba(0,0,0,0.4);
+}
+
+main {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 100px;
+}
+
+section {
+	color: rgba(0,0,0,0.87);
+	margin: 10px;
+}
+
+h2 {
+	margin: 5px;
+}
+
+.category {
+	background-color: #edecee;
+	width: 320px;
+	box-sizing: border-box;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+textarea {
+	resize: none;
+}
+
+.quick_create {
+	height: 70px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.quick_create form {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+input[type=text] {
+	height: 50px;
+	width: 220px;
+	font-size: 1em;
+	box-sizing: border-box;
+	margin-right: 2px;
+	background-color: #BBBBBB;
+	border: 1px solid rgba(0,0,0,0.6);
+}
+
+input[type=submit] {
+	height: 50px;
+	width: 50px;
+	box-sizing: border-box;
+	background-color: #6200EA;
+	border: 1px solid #311B92;
+	margin-left: 2px;
+	background-image: url(images/arrow.png);
+	background-repeat: no-repeat;
+	background-size: 40px 40px;
+	background-position: center center;
+}
+
+input[type=submit]:hover {
+	background-color: #4527A0;
+}
+
+.task {
+	min-height: 80px;
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+	display: grid;
+	grid-template-areas: "check title menu";
+	grid-template-columns: 20% 60% 20%;
+}
+
+.task_checkbox {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.task_checkbox input {
+	margin-top: 20px;
+}
+
+.task_body {
+	box-sizing: border-box;
+	padding: 10px;
+}
+
+.task_body h3, .task_body p {
+	margin: 0;
+}
+
+.task_body h3 {
+	font-size: 1em;
+}
+
+.task_body p {
+	font-size: 0.9em;
+	color: rgba(0,0,0,0.6);
+}
+
+.task_menu {
+	display: flex;
+	justify-content: center;
+}
+
+.task_menu > img {
+	margin-top: 20px;
+	opacity: 0.6;
+	cursor: pointer;
+}
+
+.task_menu img:hover {
+	opacity: 1;
+}
+
+
+/* /////////CHECKBOX STYLE//////// */
+
+.task [type="checkbox"]:not(:checked),
+.task [type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+
+.task [type="checkbox"]:not(:checked) + label,
+.task [type="checkbox"]:checked + label {
+  position: relative; 
+  padding-left: 25px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.task [type="checkbox"]:not(:checked) + label:before,
+.task [type="checkbox"]:checked + label:before {
+  content: '';
+  position: absolute;
+  left:0; top: 2px;
+  width: 30px; height: 30px; 
+  border: 1px solid #aaa;
+  background: #f8f8f8;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,.3)
+}
+
+.task [type="checkbox"]:not(:checked) + label:after,
+.task [type="checkbox"]:checked + label:after {
+  content: '✔';
+  position: absolute;
+  top: 0; left: 6px;
+  font-size: 24px;
+  color: #09ad7e;
+  transition: all .2s;
+}
+
+.task [type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0); 
+}
+
+.task [type="checkbox"]:checked + label:after {
+  opacity: 1; 
+  transform: scale(1);
+}
+
+#float_btn {
+	z-index: 60;
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	background-color: #FFC400;
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	box-shadow: 5px 5px 6px rgba(0,0,0,0.3);
+}
+
+.mini_menu {
+	background-color: white;
+	border: 1px solid #CCCCCC;
+	display: none;
+	position: absolute;
+	transform: translate(-50px,60px);
+	margin: 0;
+	padding: 0;
+}
+
+.mini_menu_item {
+	display: block;
+	width: 150px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.mini_menu_item:hover {
+	background-color: #DCDCDC;
+}
+
+.mini_menu_item img {
+	margin-left: 5px;
+	margin-right: 10px;
+}
+
+.mini_menu_item.delete {
+	color: #B00020;
+}
+
+
+@media screen and (min-width: 650px) {
+	.category {
+		width: 600px;
+	}
+}
