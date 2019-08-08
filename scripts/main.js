@@ -10,18 +10,16 @@ const ouvrirMenu = () => {
 	}
 };
 
-const focusIn = () => {
-	document.getElementById('quick_create').style.backgroundColor = "white";
-	document.getElementById('quick_create').style.border = "1px solid rgba(0,0,0,0.6)";
-	document.getElementById('quick_create').style.transition = "background-color 0.2s ease-in";
+const openModalCreate = () => {
+	document.getElementById('modal_create').classList.remove('hidden');
+	document.getElementById('noir_modal').classList.remove('hidden');
 };
 
-const focusOut = () => {
-	document.getElementById('quick_create').style.backgroundColor = "#BBBBBB";
-	document.getElementById('quick_create').style.border = "1px solid rgba(0,0,0,0.6)";
-	document.getElementById('quick_create').style.transition = "background-color 0.2s ease-in";
+const closeModalCreate = () => {
+	document.getElementById('modal_create').classList.add('hidden');
+	document.getElementById('noir_modal').classList.add('hidden');
 };
 
 document.getElementById('menu_toggle').addEventListener('click',ouvrirMenu);
-document.getElementById('quick_create').addEventListener('focusin',focusIn);
-document.getElementById('quick_create').addEventListener('focusout',focusOut);
+document.getElementById('float_btn').addEventListener('click',openModalCreate);
+document.getElementById('noir_modal').addEventListener('click',closeModalCreate);

@@ -10,7 +10,13 @@
 </head>
 <body>
 
-	<div id="recipient_modal"></div>
+	<?php
+		include "components/modal_create.php"; 
+	?>
+
+	<div id="recipient_modal">
+
+	</div>
 	<nav>
 		<h1>Todolist</h1>
 	</nav>
@@ -37,6 +43,14 @@
 						<label for="done"></label>
 					</div>
 					<div class="task_body">
+						<div class="calendar">
+							<div class="calendar_icon">
+								<img src="images/calendar.png" width="25px" height="25px">
+							</div>
+							<div class="calendar_date">
+								<p>Date butoire : 20/02/2020</p>
+							</div>
+						</div>
 						<h3>Acheter des patates</h3>
 						<p>Les patates, c'est la vie !</p>
 					</div>
